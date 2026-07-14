@@ -1,0 +1,9 @@
+[package]
+name = "ch2-complex"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = "2"
+num = "0.4"
+regex = "1.13.0"
