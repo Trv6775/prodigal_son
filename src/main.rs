@@ -1,18 +1,20 @@
-#![allow(unused_variables)]
-type File = String;
-fn open(f: &mut File) -> bool {
-     true  }                       
- 
- fn close(f: &mut File) -> bool {
-     true                       
- }
- #[allow(dead_code)] 
- fn read(f: &mut File,save_to: &mut Vec<u8>) -> ! {
-    unimplemented!()     
- }
- fn main() {
-     let mut f1 = File::from("f1.txt");   
-     open(&mut f1);
-     //read(f1, vec![]);  
-     close(&mut f1);
- }
+#[derive(Debug)]
+struct File {
+    name: String,
+    data: Vec<u8>,
+}
+impl File {
+    fn new(name: &str) -> File {
+        File {
+            name: String::from(name),
+            data: Vec::new(),
+        }
+    }
+}
+fn main() {
+    let f3=File::new("f3.txt");
+    let f3_name=&f3.name;
+    let f3_length=f3.data.len();
+    println!("{:?}", f3);
+    println!("{} is {} bytes long", f3_name, f3_length);
+}
